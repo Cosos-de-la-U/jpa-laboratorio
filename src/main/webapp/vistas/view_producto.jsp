@@ -3,26 +3,29 @@
     <div class="row justify-content-center pt-5">
         <div class="col-8">
             <div class="table-responsive">
-                <h2 class="display-4">Alumnos guardados <span class="badge "><a class="btn btn-dark"
-                                                                                href="<%=RUTA+""%>servlet_alumno?accion=add&id=0">Agregar</a></span>
+                <h2 class="display-4">Productos guardados <span class="badge "><a class="btn btn-dark"
+                                                                                href="<%=RUTA+""%>servlet_producto?accion=add&id=0">Agregar</a></span>
                 </h2>
                 <table class="table" id="example" style="width:100%">
                     <thead class="table-dark">
                     <tr>
+                        <th>#</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Fecha nacimiento</th>
-                        <th></th>
+                        <th>Descripcion</th>
+                        <th>Precio Unitario</th>
+                        <th>Categoria</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${alumnos}" var="alumno">
+                    <c:forEach items="${productos}" var="producto">
                         <tr>
-                            <td>${alumno.nombre}</td>
-                            <td>${alumno.apellido}</td>
-                            <td>${alumno.fechanac}</td>
+                            <td>${producto.id_producto}</td>
+                            <td>${producto.nombre}</td>
+                            <td>${producto.descripcion}</td>
+                            <td>${producto.precio_unitario}</td>
+                            <td>${producto.categoria}</td>
                             <td>
-                                <a href="http://localhost:8080/jpa-laboratorio-1.0-SNAPSHOT/servlet_alumno?accion=mod&id=${alumno.id}"
+                                <a href="http://localhost:8080/jpa-laboratorio-1.0-SNAPSHOT/servlet_producto?accion=mod&id=${producto.id}"
                                    class="btn btn-success">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                          class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -32,8 +35,8 @@
                                     </svg>
                                 </a>
                                 <a
-                                        href="http://localhost:8080/jpa-laboratorio-1.0-SNAPSHOT/servlet_alumno?accion=del&id=${alumno.id}"
-                                        title="Eliminar alumno seleccionado" class="btn btn-danger">
+                                        href="http://localhost:8080/jpa-laboratorio-1.0-SNAPSHOT/servlet_producto?accion=del&id=${producto.id}"
+                                        title="Eliminar productos seleccionado" class="btn btn-danger">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0
 0 16 16">
@@ -51,15 +54,16 @@
                         </tr>
                     </c:forEach>
                     </tbody>
-                    <tfood>
+                    <tfoot>
                         <tr>
                             <th>#</th>
                             <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Fecha nacimiento</th>
+                            <th>Descripcion</th>
+                            <th>Precio Unitario</th>
+                            <th>Categoria</th>
                             <th></th>
                         </tr>
-                    </tfood>
+                    </tfoot>
                 </table>
             </div>
         </div>

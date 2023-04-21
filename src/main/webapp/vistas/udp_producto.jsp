@@ -5,10 +5,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <main>
     <!--seteo de variables con JSQL//-->
-    <c:set var="idAlumno" value="${alumno.id}" />
-    <c:set var="aluNombre" value="${alumno.nombre}" />
-    <c:set var="aluApellido" value="${alumno.apellido}" />
-    <c:set var="fechaNacimiento" value="${alumno.fechanac}" />
+    <c:set var="idAlumno" value="${productos.id}" />
+    <c:set var="aluNombre" value="${productos.nombre}" />
+    <c:set var="aluApellido" value="${productos.apellido}" />
+    <c:set var="fechaNacimiento" value="${productos.fechanac}" />
     <fmt:formatDate var="fechaFormateada" value="${fechaNacimiento}" pattern="yyyyMM-dd" />
     <!--Fin de seteo de variables//-->
 
@@ -32,7 +32,7 @@
                     <div class="mb-1 row">
                         <label for="inputName" class="card-title">Apellido</label>
                         <div class="col-10">
-                            <input type="text" value="${aluApellido}" class="form-control" name="txtapellido" id="inputName" placeholder="ingrese el nombre del alumno">
+                            <input type="text" value="${aluApellido}" class="form-control" name="txtapellido" id="inputName" placeholder="ingrese el nombre del productos">
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                     <div class="mb-1 row">
                         <label for="inputName" class="card-title">Fecha nacimiento</label>
                         <div class="col-10">
-                            <input type="date" pattern="yyyy-MM-dd" value="${fechaFormateada}" class="form-control" name="txtfecha" id="inputName" placeholder="ingrese el apellido del alumno">
+                            <input type="date" pattern="yyyy-MM-dd" value="${fechaFormateada}" class="form-control" name="txtfecha" id="inputName" placeholder="ingrese el apellido del productos">
                         </div>
                     </div>
                 </div>

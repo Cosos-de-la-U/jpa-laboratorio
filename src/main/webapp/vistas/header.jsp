@@ -33,10 +33,10 @@
 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-               aria-expanded="false">Alumnos</a>
+               aria-expanded="false">Productos</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="<%=RUTA+""%>servlet_alumno?accion=con">Consulta</a>
-                <a class="dropdown-item" href="<%=RUTA+""%>servlet_alumno?accion=add">Agregar</a>
+                <a class="dropdown-item" href="<%=RUTA+""%>servlet_producto?accion=con">Consulta</a>
+                <a class="dropdown-item" href="<%=RUTA+""%>servlet_producto?accion=add">Agregar</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#tab4Id">Action</a>
             </div>
@@ -44,10 +44,10 @@
 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-               aria-expanded="false">Alumnos</a>
+               aria-expanded="false">Productos</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="<%=RUTA+""%>servlet_alumno?accion=con&id=0">Consulta</a>
-                <a class="dropdown-item" href="<%=RUTA+""%>servlet_alumno?accion=add&id=0">Agregar</a>
+                <a class="dropdown-item" href="<%=RUTA+""%>servlet_producto?accion=con&id=0">Consulta</a>
+                <a class="dropdown-item" href="<%=RUTA+""%>servlet_producto?accion=add&id=0">Agregar</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#tab4Id">Action</a>
             </div>

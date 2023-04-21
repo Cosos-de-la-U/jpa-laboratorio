@@ -2,7 +2,7 @@ package controladores;
 
 
 import jakarta.transaction.SystemException;
-import modelos.Alumno;
+import modelos.Productos;
 
 import javax.naming.NamingException;
 import java.util.List;
@@ -10,37 +10,37 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ControladoraPersistencia {
-    // objeto de la clase AlumnoJpaController
-    AlumnoJpaController alumnoJpa;
+    // objeto de la clase ProductoJpaController
+    ProductoJpaController productoJpa;
 
     // constructor
     public ControladoraPersistencia() throws NamingException, SystemException {
-        this.alumnoJpa = new AlumnoJpaController();
+        this.productoJpa = new ProductoJpaController();
     }
 
-    // Sirve para agregar nuevos alumnos
-    public void crearAlumno(Alumno alumno) {
+    // Sirve para agregar nuevos productos
+    public void crearProducto(Productos productos) {
         try {
-            this.alumnoJpa.create(alumno);
+            this.productoJpa.create(productos);
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    // consulta general de alumnos
-    public List<Alumno> traerListaAlumnos() {
-        return this.alumnoJpa.findAlumnoEntities();
+    // consulta general de productos
+    public List<Productos> traerListaProductos() {
+        return this.productoJpa.findProductoEntities();
     }
 
-    // consulta un alumno en especifico
-    public Alumno traerAlumno(int id) {
-        return this.alumnoJpa.findAlumno(id);
+    // consulta un producto en especifico
+    public Productos traerProducto(int id) {
+        return this.productoJpa.findProducto(id);
     }
 
-    // actualiza la información de un alumno
-    public void editarAlumno(Alumno alumno) {
+    // actualiza la información de un producto
+    public void editarProducto(Productos productos) {
         try {
-            this.alumnoJpa.edit(alumno);
+            this.productoJpa.edit(productos);
         } catch (RollbackFailureException ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
@@ -48,10 +48,10 @@ public class ControladoraPersistencia {
         }
     }
 
-    // elimina un alumno en especifico
-    public void eliminarAlumno(int id) {
+    // elimina un producto en especifico
+    public void eliminarProducto(int id) {
         try {
-            this.alumnoJpa.destroy(id);
+            this.productoJpa.destroy(id);
         } catch (RollbackFailureException ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
@@ -59,10 +59,10 @@ public class ControladoraPersistencia {
         }
     }
 
-    // consulta los ultimos 4 alumnos agregados
-    // i=cantidad de alumnos, j=desde donde comienza a contar
-    public List<Alumno> consultaUltimos(int i, int j) {
-        int total = this.alumnoJpa.getAlumnoCount() - 4;
-        return this.alumnoJpa.findAlumnoEntities(i, total);
+    // consulta los ultimos 4 productos agregados
+    // i=cantidad de productos, j=desde donde comienza a contar
+    public List<Productos> consultaUltimos(int i, int j) {
+        int total = this.productoJpa.getProductoCount() - 4;
+        return this.productoJpa.findProductoEntities(i, total);
     }
 }

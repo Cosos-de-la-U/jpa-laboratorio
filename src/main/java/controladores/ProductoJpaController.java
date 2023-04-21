@@ -10,17 +10,17 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import jakarta.transaction.SystemException;
 import jakarta.transaction.UserTransaction;
-import modelos.Alumno;
+import modelos.Productos;
 
 import javax.naming.NamingException;
 
-public class AlumnoJpaController implements Serializable {
+public class ProductoJpaController implements Serializable {
 
     @Resource
     UserTransaction utx;
 
 
-    public AlumnoJpaController(UserTransaction utx, EntityManagerFactory emf) {
+    public ProductoJpaController(UserTransaction utx, EntityManagerFactory emf) {
         this.utx = utx;
         this.emf = emf;
     }
@@ -29,12 +29,12 @@ public class AlumnoJpaController implements Serializable {
     //private UserTransaction utx = null;
     private EntityManagerFactory emf = null;
 
-    public AlumnoJpaController() throws NamingException, SystemException {
+    public ProductoJpaController() throws NamingException, SystemException {
         this.emf = Persistence.createEntityManagerFactory("pruebaJPAPU");
     }
 
 
-    public AlumnoJpaController(UserTransaction utx) throws NamingException, SystemException {
+    public ProductoJpaController(UserTransaction utx) throws NamingException, SystemException {
         this.utx = utx;
         this.emf = Persistence.createEntityManagerFactory("pruebaJPAPU");
     }
@@ -43,13 +43,13 @@ public class AlumnoJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Alumno alumno) throws Exception {
+    public void create(Productos productos) throws Exception {
         EntityManager em = null;
         try {
             //utx.begin();
             em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(alumno);
+            em.persist(productos);
             em.getTransaction().commit();
             //utx.commit();
         } catch (Exception ex) {
@@ -66,13 +66,13 @@ public class AlumnoJpaController implements Serializable {
         }
     }
 
-    public void edit(Alumno alumno) throws NonexistentEntityException, RollbackFailureException, Exception {
+    public void edit(Productos productos) throws NonexistentEntityException, RollbackFailureException, Exception {
         EntityManager em = null;
         try {
             //utx.begin();
             em = getEntityManager();
             em.getTransaction().begin();
-            alumno = em.merge(alumno);
+            productos = em.merge(productos);
             em.getTransaction().commit();
             //utx.commit();
         } catch (Exception ex) {
@@ -83,9 +83,9 @@ public class AlumnoJpaController implements Serializable {
             }
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = alumno.getId();
-                if (findAlumno(id) == null) {
-                    throw new NonexistentEntityException("The alumno with id " + id + " no longer exists.");
+                int id = productos.getId_producto();
+                if (findProducto(id) == null) {
+                    throw new NonexistentEntityException("The producto with id " + id + " no longer exists.");
                 }
             }
             throw ex;
@@ -101,14 +101,14 @@ public class AlumnoJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Alumno alumno;
+            Productos productos;
             try {
-                alumno = em.getReference(Alumno.class, id);
-                alumno.getId();
+                productos = em.getReference(Productos.class, id);
+                productos.getId_producto();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The alumno with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The producto with id " + id + " no longer exists.", enfe);
             }
-            em.remove(alumno);
+            em.remove(productos);
             em.getTransaction().commit();
         } catch (Exception ex) {
             try {
@@ -124,19 +124,19 @@ public class AlumnoJpaController implements Serializable {
         }
     }
 
-    public List<Alumno> findAlumnoEntities() {
-        return findAlumnoEntities(true, -1, -1);
+    public List<Productos> findProductoEntities() {
+        return findProductoEntities(true, -1, -1);
     }
 
-    public List<Alumno> findAlumnoEntities(int maxResults, int firstResult) {
-        return findAlumnoEntities(false, maxResults, firstResult);
+    public List<Productos> findProductoEntities(int maxResults, int firstResult) {
+        return findProductoEntities(false, maxResults, firstResult);
     }
 
-    private List<Alumno> findAlumnoEntities(boolean all, int maxResults, int firstResult) {
+    private List<Productos> findProductoEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Alumno.class));
+            cq.select(cq.from(Productos.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -148,20 +148,20 @@ public class AlumnoJpaController implements Serializable {
         }
     }
 
-    public Alumno findAlumno(int id) {
+    public Productos findProducto(int id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Alumno.class, id);
+            return em.find(Productos.class, id);
         } finally {
             em.close();
         }
     }
 
-    public int getAlumnoCount() {
+    public int getProductoCount() {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<Alumno> rt = cq.from(Alumno.class);
+            Root<Productos> rt = cq.from(Productos.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
