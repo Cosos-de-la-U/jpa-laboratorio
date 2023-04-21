@@ -3,10 +3,21 @@ package modelos;
 import controladores.ControladoraPersistencia;
 import java.util.List;
 import javax.naming.NamingException;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import jakarta.transaction.SystemException;
 
 public class controladorProducto {
     ControladoraPersistencia cont_persis;
+
+    public void testConnection() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pruebaJPAPU");
+        EntityManager em = emf.createEntityManager();
+        em.close();
+        emf.close();
+    }
 
     public controladorProducto() throws NamingException, SystemException {
         this.cont_persis = new ControladoraPersistencia();

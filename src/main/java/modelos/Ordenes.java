@@ -9,7 +9,7 @@ import java.sql.Date;
 public class Ordenes implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_orden;
+    private int id;
     private int id_producto;
     private int cantidad;
     private String categoria;
@@ -20,12 +20,12 @@ public class Ordenes implements Serializable {
     public Ordenes() {
     }
 
-    public Ordenes(int id_orden) {
-        this.id_orden = id_orden;
+    public Ordenes(int id) {
+        this.id = id;
     }
 
-    public Ordenes(int id_orden, int id_producto, int cantidad, String categoria, Date fecha_orden, String direccion_entrega) {
-        this.id_orden = id_orden;
+    public Ordenes(int id, int id_producto, int cantidad, String categoria, Date fecha_orden, String direccion_entrega) {
+        this.id = id;
         this.id_producto = id_producto;
         this.cantidad = cantidad;
         this.categoria = categoria;
@@ -34,11 +34,11 @@ public class Ordenes implements Serializable {
     }
 
     public int getId_orden() {
-        return id_orden;
+        return id;
     }
 
-    public void setId_orden(int id_orden) {
-        this.id_orden = id_orden;
+    public void setId_orden(int id) {
+        this.id = id;
     }
 
     public int getId_producto() {

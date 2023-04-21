@@ -1,5 +1,8 @@
 package servlets_sis;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,8 +19,6 @@ import java.util.List;
 @WebServlet(name = "ProductoServlet", urlPatterns = {"/servlet_producto"})
 public class servlet_producto extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
-
     private controladorProducto cproducto = new controladorProducto();
     private Productos productos = new Productos();
 
@@ -25,7 +26,12 @@ public class servlet_producto extends HttpServlet {
     }
 
 
+
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+
 
         String accion=request.getParameter("accion");
         int id = 0;
@@ -33,12 +39,26 @@ public class servlet_producto extends HttpServlet {
             id=Integer.parseInt(request.getParameter("id"));
         }
 
-        List<Productos> consultaGeneral=this.cproducto.traerListaProductos();
-        System.out.println(consultaGeneral);
+        List<Productos> consultaGeneral = this.cproducto.traerListaProductos();
+        for (Productos p : consultaGeneral) {
+            System.out.println("ID: " + p.getId_producto());
+            System.out.println("Nombre: " + p.getNombre());
+            System.out.println("Descripción: " + p.getDescripcion());
+            System.out.println("Precio unitario: " + p.getPrecio_unitario());
+            System.out.println("Categoría: " + p.getCategoria());
+            System.out.println();
+        }
+
         switch(accion){
             case "con":
                 request.setAttribute("productos",consultaGeneral);
                 request.getRequestDispatcher("vistas/view_producto.jsp").forward(request, response);
+                try {
+                    cproducto.testConnection(); // call a method that tests the connection
+                    System.out.println("Connection to database successful");
+                } catch (Exception e) {
+                    System.out.println("Error connecting to database: " + e.getMessage());
+                }
                 break;
 
             case "mod":

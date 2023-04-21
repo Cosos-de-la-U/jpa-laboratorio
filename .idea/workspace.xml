@@ -10,23 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aeb61565-f952-41db-8471-062f6f68b482" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/Ordenes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/controladorProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets_sis/servlet_producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c3350ba-fc75-4dfd-a86d-c12d03b4f6b4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c3350ba-fc75-4dfd-a86d-c12d03b4f6b4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controladores/AlumnoJpaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controladores/ProductoJpaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controladores/ControladoraPersistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controladores/ControladoraPersistencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/Productos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/controladorAlumno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets_sis/servlet_alumno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/Ordenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/Ordenes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/Productos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/Productos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/controladorProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/controladorProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets_sis/servlet_producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets_sis/servlet_producto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vistas/add_alumno.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vistas/add_producto.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vistas/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vistas/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vistas/udp_alumno.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vistas/udp_producto.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vistas/view_alumno.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vistas/view_producto.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vistas/view_producto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vistas/view_producto.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +171,8 @@
       <workItem from="1682013990226" duration="8786000" />
       <workItem from="1682038255651" duration="1545000" />
       <workItem from="1682039832428" duration="3004000" />
+      <workItem from="1682094252463" duration="6346000" />
+      <workItem from="1682105177350" duration="165000" />
     </task>
     <servers />
   </component>

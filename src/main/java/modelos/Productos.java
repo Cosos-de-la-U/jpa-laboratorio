@@ -3,9 +3,8 @@ package modelos;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.Date;
 
-@Entity(name = "producto")
+@Entity
 public class Productos implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +15,6 @@ public class Productos implements Serializable {
     private String descripcion;
     private double precio_unitario;
     private String categoria;
-  /*  @Temporal(TemporalType.DATE)
-    private Date fechanac;*/
 
     public Productos() {
     }

@@ -14,6 +14,7 @@
                         <th>Descripcion</th>
                         <th>Precio Unitario</th>
                         <th>Categoria</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -25,7 +26,7 @@
                             <td>${producto.precio_unitario}</td>
                             <td>${producto.categoria}</td>
                             <td>
-                                <a href="http://localhost:8080/jpa-laboratorio-1.0-SNAPSHOT/servlet_producto?accion=mod&id=${producto.id}"
+                                <a href="http://localhost:8080/jpa-laboratorio-1.0-SNAPSHOT/servlet_producto?accion=mod&id=${producto.id_producto}"
                                    class="btn btn-success">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                          class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -35,7 +36,7 @@
                                     </svg>
                                 </a>
                                 <a
-                                        href="http://localhost:8080/jpa-laboratorio-1.0-SNAPSHOT/servlet_producto?accion=del&id=${producto.id}"
+                                        href="http://localhost:8080/jpa-laboratorio-1.0-SNAPSHOT/servlet_producto?accion=del&id=${producto.id_producto}"
                                         title="Eliminar productos seleccionado" class="btn btn-danger">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0
